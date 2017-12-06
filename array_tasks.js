@@ -5,11 +5,11 @@ var arrayTasks = {
 		return result;
 	},
 
-	// insertAt: function (arr, itemToAdd, index) {
-	// 	 result = [3,3,3];
-	// 	 result.splice(arr, itemToAdd, index);
-	// 	return result;
-	// },
+	insertAt: function (arr, itemToAdd, index) {
+
+		 arr.splice(index, 0, itemToAdd);
+		return arr;
+	},
 
 	square: function (arr) {
 
@@ -58,14 +58,21 @@ var arrayTasks = {
 			arr.filter(function(item, index, array){
 				if(item == itemToFind){
 					result.push(index);
-				}
-			})
+				};
+			});
 		return result;
 	},
 
-	// sumOfAllEvenNumbersSquared: function (arr) {
-
-	// }
+	sumOfAllEvenNumbersSquared: function (arr) {
+		 total = 0;
+		arr.forEach(function(item){
+			if (item % 2 === 0){
+				 var squared = item * item;
+				total + squared;
+			};
+		});
+		return total;
+	},
 
 }
 
