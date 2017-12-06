@@ -39,12 +39,19 @@ var arrayTasks = {
 				}
 			}
 		});
-		return result; 
+		return result;
 	},
 
-	// removeAndClone: function (arr, valueToRemove) {
-
-	// },
+	removeAndClone: function (arr, valueToRemove) {
+			let result = [];
+			arr.forEach(function(item){
+				if (item === valueToRemove){
+					item.pop;
+				}
+				else result.push(item);
+			});
+			return result;
+	},
 
 	// findIndexesOf: function (arr, itemToFind) {
 
