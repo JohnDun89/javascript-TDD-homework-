@@ -30,9 +30,17 @@ var arrayTasks = {
 		return result;
 	},
 
-	// findDuplicates: function (arr) {
-
-	// },
+	findDuplicates: function (arr) {
+		let result = [];
+		arr.forEach(function(item,index){
+			if (arr.indexOf(item, index +1)> -1) {
+				if(result.indexOf(item) === -1){
+					result.push(item);
+				}
+			}
+		});
+		return result; 
+	},
 
 	// removeAndClone: function (arr, valueToRemove) {
 
