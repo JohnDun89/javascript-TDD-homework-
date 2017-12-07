@@ -1,13 +1,13 @@
 var arrayTasks = {
 
 	concat: function (arr1, arr2) {
-		 result = arr1.concat(arr2);
+		result = arr1.concat(arr2);
 		return result;
 	},
 
 	insertAt: function (arr, itemToAdd, index) {
 
-		 arr.splice(index, 0, itemToAdd);
+		arr.splice(index, 0, itemToAdd);
 		return arr;
 	},
 
@@ -15,7 +15,7 @@ var arrayTasks = {
 
 		var result = [];
 		arr.map(function(item) {
-			 var squared = item * item;
+			var squared = item * item;
 			result.push(squared);
 		});
 		return result;
@@ -33,7 +33,11 @@ var arrayTasks = {
 	findDuplicates: function (arr) {
 		let result = [];
 		arr.forEach(function(item,index){
+			//index of gets the index.
+			// index of is checking that the item is in the array, and that it is not the item - hence the -1.
 			if (arr.indexOf(item, index +1)> -1) {
+
+				// this is checking that the item is not already in the result array.
 				if(result.indexOf(item) === -1){
 					result.push(item);
 				}
@@ -43,32 +47,32 @@ var arrayTasks = {
 	},
 
 	removeAndClone: function (arr, valueToRemove) {
-			let result = [];
-			arr.forEach(function(item){
-				if (item === valueToRemove){
-					item.pop;
-				}
-				else result.push(item);
-			});
-			return result;
+		let result = [];
+		arr.forEach(function(item){
+			if (item === valueToRemove){
+				item.pop;
+			}
+			else result.push(item);
+		});
+		return result;
 	},
 
 	findIndexesOf: function (arr, itemToFind) {
 		let result = [];
-			arr.filter(function(item, index, array){
-				if(item == itemToFind){
-					result.push(index);
-				};
-			});
+		arr.filter(function(item, index, array){
+			if(item == itemToFind){
+				result.push(index);
+			};
+		});
 		return result;
 	},
 
 	sumOfAllEvenNumbersSquared: function (arr) {
-		 total = 0;
+		total = 0;
 		arr.forEach(function(item){
 			if (item % 2 === 0){
-				 var squared = item * item;
-				total + squared;
+				var squared = item * item;
+				total += squared;
 			};
 		});
 		return total;
